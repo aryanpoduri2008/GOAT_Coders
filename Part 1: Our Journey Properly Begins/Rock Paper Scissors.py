@@ -1,3 +1,10 @@
+"""
+Simulates a rock, paper, scissors game against the computer
+    - Asks user for their choice
+    - Randomly selects an option
+    - Prints both selections and winner
+"""
+
 import random
 
 choices = ["rock", "paper", "scissors"]

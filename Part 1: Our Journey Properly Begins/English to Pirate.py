@@ -1,3 +1,12 @@
+"""
+Program that converts an English statement into pirate-speak
+    - Asks for an English statement
+    - Uses dictionary to convert individual words
+    - Prints priate-speak version
+
+Ex: "hello, i am your friend" -> "ahoy, i be yer matey"
+"""
+
 import re
 
 pirate_dict = {

@@ -1,3 +1,12 @@
+"""
+Program that simulates the guess the number game
+    - Selects a random number between 1 and 100
+    - Asks the user to guess the number, responding with higher or lower
+    - Repeats until either
+        - user guesses the number
+        - user runs out of guesses and prints out the number
+"""
+
 import random
 
 # The computer picks a random number

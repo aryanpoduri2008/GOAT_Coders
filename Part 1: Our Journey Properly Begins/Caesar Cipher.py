@@ -1,3 +1,15 @@
+"""
+Program that encodes a message using the caesar cipher
+    - Asks for a message and shift number
+    - Shifts the message using chr() and ord()
+    - Prints the encoded message
+
+Ex:
+Message: "My name is Bob"
+Shift Number: 2
+Encoded Message: "Oa pcog ku Dqd"
+"""
+
 print("Welcome to the Secret Code Program!")
 
 message = input("Enter a message to encode: ")

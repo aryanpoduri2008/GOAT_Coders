@@ -1,3 +1,14 @@
+"""
+Program that converts an English statement with gen-alpha wordage into an English statement with parent wordage or
+vice versa.
+    - Gives options to either convert from gen-alpha to parent or parent to gen-alpha
+    - Asks for a statement
+    - Uses dictionary to convert individual words
+    - Prints converted version
+
+Ex: "your outfit is a little crazy dude" -> "your fit is a little wild bruh"
+"""
+
 import re
 
 gen_alpha_dict = {

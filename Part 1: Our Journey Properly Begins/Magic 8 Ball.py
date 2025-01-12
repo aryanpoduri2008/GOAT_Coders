@@ -1,3 +1,9 @@
+"""
+Program that simulates a Magic 8 Ball
+    - Asks user for question
+    - Prints a random pre-made answer
+"""
+
 import random
 
 responses = [
