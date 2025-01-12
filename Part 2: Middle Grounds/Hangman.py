@@ -1,14 +1,36 @@
+"""
+Program that simulates a hangman game against the computer
+    - Selects a random word out of a word bank
+    - Asks for a guessed letter
+    - Updates game
+        - If letter in word, reveal
+        - If letter not in word, decrease guesses
+    - Repeat until
+        - user guesses all letters in word
+        - user runs out of guesses
+"""
+
 import random
 
 
-# Step 1: Define a function to pick a random word
 def choose_word():
+    """
+    :return: a random word from a pre-made word bank
+    """
+
     words = ['python', 'java', 'hangman', 'programming', 'coding', 'developer']
     return random.choice(words)
 
 
-# Step 2: Define a function to display the current state of the word
 def display_word(word, guessed_letters):
+    """
+    Uses the secret word and list of guessed letters to create the display word. Underscores are used to represent
+    not guessed words.
+    :param word: the secret word
+    :param guessed_letters: list of user guessed letters
+    :return: a string that reveals all letters of the word that have been guessed
+    """
+
     display = ''
     for letter in word:
         if letter in guessed_letters:
@@ -18,8 +40,13 @@ def display_word(word, guessed_letters):
     return display
 
 
-# Step 3: Define a function to handle the guessing process
 def get_guess(guessed_letters):
+    """
+    Repeats the guess gathering process until the user guesses a letter that has not been previously guessed.
+    :param guessed_letters: list of user guessed letters
+    :return: a valid guessed letter
+    """
+
     while True:
         guess = input("Guess a letter: ").lower()
         if guess in guessed_letters:
@@ -27,11 +54,17 @@ def get_guess(guessed_letters):
         else:
             return guess
 
+
 # Step 4: Define the main game function
 def play_hangman():
-    word = choose_word()  # The secret word
-    guessed_letters = []  # To track the guessed letters
-    attempts = 6  # Number of wrong guesses allowed
+    """
+    Main game function that repeats the guessing process until the game is ended with a user success or a user fail.
+    :return:
+    """
+
+    word = choose_word()
+    guessed_letters = []
+    attempts = 6
 
     print("Welcome to Hangman!")
     print(f"The word has {len(word)} letters.")
@@ -40,6 +73,7 @@ def play_hangman():
         print(display_word(word, guessed_letters))
         guess = get_guess(guessed_letters)
 
+        # Checks if guess is in the secret word
         if guess in word:
             print(f"Good job! {guess} is in the word!")
         else:
@@ -57,5 +91,4 @@ def play_hangman():
         print(f"Game over! The word was '{word}'.")
 
 
-# Step 5: Start the game
 play_hangman()
