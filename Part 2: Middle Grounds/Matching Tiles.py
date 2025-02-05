@@ -7,7 +7,13 @@ def generate_board(size=4):
     random.shuffle(tiles)
 
     # Create a 2D board
-    board = [tiles[i:i + size] for i in range(0, len(tiles), size)]
+    board = []
+    tiles_idx = 0
+    for i in range(size):
+        board.append([])
+        for j in range(size):
+            board.append(tiles[tiles_idx])
+            tiles_idx += 1
     return board
 
 
