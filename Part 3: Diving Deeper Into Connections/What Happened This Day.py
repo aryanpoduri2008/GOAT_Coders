@@ -4,7 +4,10 @@ import requests
 def fetch_on_this_day(month, day):
     url = f"https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}"
     try:
-        response = requests.get(url)
+        headers = {
+            "User-Agent": "MyApp/1.0 (https://example.com; contact@example.com)"
+        }
+        response = requests.get(url, headers=headers)
         response.raise_for_status()
         data = response.json()
         return data.get("events", [])
